@@ -1,0 +1,146 @@
+{% extends "layout.html" %}
+{% block title %}Home Page{% endblock %}
+ 
+ {% block head %}
+ {{ super() }}
+ <style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    font: 100% / 1.414 "Open Sans", "Roboto", arial, sans-serif;
+    background-color: #182d81;
+}
+
+.heading {
+    text-align: center;
+    font-size: 3.0em;
+    letter-spacing: 1px;
+    padding: 40px;
+    color: white;
+}
+
+.gallery-image {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-image img {
+    height: 350px;
+    width: 450px;
+    transform: scale(1.0);
+    transition: transform 0.4s ease;
+}
+
+.img-box {
+    box-sizing: content-box;
+    margin: 8px;
+    height: 350px;
+    width: 450px;
+    overflow: hidden;
+    display: inline-block;
+    color: white;
+    position: relative;
+    background-color: white;
+}
+
+.caption {
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+    opacity: 0.0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.transparent-box {
+    height: 350px;
+    width: 450px;
+    background-color:rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: background-color 0.3s ease;
+}
+
+.img-box:hover img { 
+    transform: scale(1.1);
+}
+
+.img-box:hover .transparent-box {
+    background-color:rgba(0, 0, 0, 0.5);
+}
+
+.img-box:hover .caption {
+    transform: translateY(-20px);
+    opacity: 1.0;
+}
+
+.img-box:hover {
+    cursor: pointer;
+}
+
+.caption > p:nth-child(2) {
+    font-size: 0.8em;
+}
+
+.opacity-low {
+    opacity: 0.5;
+}
+ </style>
+ {% endblock %}
+ 
+ 
+ {% block content %} 
+<html>
+<head>
+  <title>ANDREW'S PROPERTY FINDER</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:600,900" rel="stylesheet">
+</head>
+<body>
+  <p class="heading">ANDREW'S PROPERTY FINDER</p>
+  <div class="gallery-image">
+    <div class="img-box">
+      <img src="https://i0.wp.com/www.householdpm.com.au/wp-content/uploads/2019/08/hppost-how-to-switch-to-household-propertiest-01.jpg?w=1920&ssl=1" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>Properties</p>
+          <p class="opacity-low">Buy</p>
+        </div>
+      </div> 
+    </div>
+    <div class="img-box">
+      <img src="https://i0.wp.com/www.householdpm.com.au/wp-content/uploads/2019/12/img-sec-refer-01.jpg?resize=1536%2C864&ssl=1" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>Properties</p>
+          <p class="opacity-low">Sell</p>
+        </div>
+      </div>
+    </div>
+    <div class="img-box">
+      <img src="https://content.jdmagicbox.com/def_content/estate_agents_for_residence/default-estate-agents-for-residence-0.jpg?clr=#55aaaa?fit=around%7C270%3A130&crop=270%3A130%3B%2A%2C%2A" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>Properties</p>
+          <p class="opacity-low">Agent</p>
+        </div>
+      </div>
+    </div>
+    <div class="img-box">
+      <img src="https://seniorpropertyservices.com/wp-content/uploads/2020/05/Real-Estate-Investing0101.jpg" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>Properties</p>
+          <p class="opacity-low">Installments</p>
+        </div>
+      </div> 
+    </div>
+  </div>
+</body>
+</html>
+ {% endblock %}
